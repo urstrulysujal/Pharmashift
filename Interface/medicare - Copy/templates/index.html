@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+{% endblock %}
+{% block content %}
+<section class="login-container">
+    <div class="content">
+        <div class="welcome-message">
+            <h2>Welcome to <span style="color: green;">PharmaShift</span></h2>
+            <p>We help people to transport medicines from the pharmacy to a particular bed. Save your energy and just chill in bed, medicine is on the way.</p>
+        </div>
+        <div class="login-form">
+            <form action="/login" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <label for="role">Login As:</label>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="nurse">Hospital Staff</option>
+                    <option value="pharmacy">Pharmacy Staff</option>
+                </select>
+
+                <div class="button-group">
+                    <button type="submit" id="login-button">Login</button>
+                    <button type="button" class="create-account" onclick="window.location.href='/register'">Create Account</button>
+                </div>
+            </form>
+            <div id="login-feedback"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.page-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.helpdesk-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.helpdesk-link a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.welcome-message {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.welcome-message h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.welcome-message p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.login-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+label {
+    margin-top: 15px;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+input, select, button {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 48%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#login-feedback {
+    margin-top: 20px;
+    color: red;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+button.create-account {
+    background-color: #28a745;
+}
+
+button.create-account:hover {
+    background-color: #218838;
+}

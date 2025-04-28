@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='pharmacy.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="{{ url_for('static', filename='pharmacy.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="panel">
+    <h2 class="page-name">Pharmacy Management</h2>
+    
+    <!-- Flexbox container to hold Orders and Manage Medicines sections -->
+    <div class="row">
+        <!-- Orders Section (left half) -->
+        <div id="ordersSection" class="col-half">
+            <h3>Orders</h3>
+            <div class="filters">
+                <label for="statusFilter">Status:</label>
+                <select id="statusFilter" class="form-control">
+                    <option value="">All</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                </select>
+                <label for="patientFilter">Patient:</label>
+                <input type="text" id="patientFilter" class="form-control" placeholder="Enter patient name">
+                <button id="applyFilters" class="btn btn-primary mt-2">Apply Filters</button>
+            </div>
+            <table id="ordersTable" class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Medicine</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="orderList">
+                    <!-- Orders will be dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Manage Medicines Section (right half) -->
+        <div id="manageMedicinesSection" class="col-half">
+            <h3>Manage Medicines</h3>
+            <button id="addMedicineButton" class="btn btn-primary">Add New Medicine</button>
+            
+            <!-- Add Medicine Form (hidden by default) -->
+            <div id="addMedicineForm" class="hidden mt-4">
+                <form>
+                    <div class="mb-3">
+                        <label for="medicineName" class="form-label">Medicine Name:</label>
+                        <input type="text" id="medicineName" class="form-control" placeholder="Enter medicine name">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" placeholder="Enter quantity">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <input type="text" id="description" class="form-control" placeholder="Enter description">
+                    </div>
+                    
+                    <button type="button" id="saveMedicineButton" class="btn btn-primary">Save Medicine</button>
+                </form>
+            </div>
+
+            <table id="medicinesTable" class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Quantity</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="medicinesList">
+                    <!-- Medicines will be dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal fade" id="orderDetailsModal" tabindex="-1" role="dialog" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel">Order Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="orderDetails">
+                    <!-- Order details will be dynamically populated -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="dispatchButton" class="btn btn-primary hidden">Dispatch</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

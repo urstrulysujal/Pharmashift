@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.1em;
+}
+
+.navbar-right a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Orders Section */
+.orders-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.orders-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orders-list th, .orders-list td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.orders-list th {
+    background-color: #007bff;
+    color: white;
+}
+
+.orders-list tr.emergency {
+    background-color: red;
+    color: white;
+}
+
+.orders-list tr.completed {
+    background-color: white;
+    color: black;
+}
+
+/* New Order Section */
+#new-order-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+label {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+input, select, textarea, button {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

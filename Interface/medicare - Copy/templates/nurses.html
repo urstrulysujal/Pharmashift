@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nurses.css') }}">
+    <title>Nurse Panel</title>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="navbar-left">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+                <div class="branding">PharmaShift</div>
+            </div>
+            <div class="navbar-right">
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="#profile">Profile</a>
+                <a href="{{ url_for('home') }}">Logout</a>
+            </div>
+        </header>
+
+        <section id="orders">
+            <h2>Orders</h2>
+            <div class="orders-container">
+                <div class="orders-list">
+                    <button id="new-order-button">New Order</button>
+                    <section id="new-order-section" class="hidden">
+                        <h2>New Order</h2>
+                        <form id="new-order-form">
+                            <label for="patient-name">Patient Name:</label>
+                            <input type="text" id="patient-name" placeholder="Enter Patient's Name" required>
+
+                            <label for="bed-number">Bed Number:</label>
+                            <input type="text" id="bed-number" placeholder="Enter Bed Number" required>
+
+                            <label for="phone-number">Phone Number:</label>
+                            <input type="text" id="phone-number" placeholder="Enter Phone Number" required>
+
+                            <label for="doctor-name">Doctor Name:</label>
+                            <input type="text" id="doctor-name" placeholder="Enter Doctor's Name" required>
+
+                            <label for="medicine-search">Search Medicines:</label>
+                            <input type="text" id="medicine-search" placeholder="Search for medicines">
+                            <ul id="medicine-results"></ul>
+                            <label for="medicine-list">Selected Medicines:</label>
+                            <textarea id="medicine-list" placeholder="Selected medicines will appear here" required></textarea>
+
+                            <label for="emergency">Emergency:</label>
+                            <select id="emergency">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+
+                            <button type="submit">Submit Order</button>
+                            <button type="button" id="close-order-form">Close</button>
+                        </form>
+                    </section>
+                    <h3>Current and Previous Orders</h3>
+                    <div class="filter-container">
+                        <label for="order-filter">Filter by:</label>
+                        <select id="order-filter">
+                            <option value="recent">Most Recent</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                        <button id="filter-button">Apply Filter</button>
+                    </div>
+                    <table id="orders-list">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Patient</th>
+                                <th>Bed</th>
+                                <th>Phone</th>
+                                <th>Doctor</th>
+                                <th>Medicines</th>
+                                <th>Status</th>
+                                <th>Emergency</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Orders will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='nurses.js') }}"></script>
+</body>
+</html>
